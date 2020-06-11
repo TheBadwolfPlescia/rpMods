@@ -10,6 +10,7 @@ class Play extends Phaser.Scene {
         this.load.image("starfield", "./assets/starfield.png");
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+        this.load.audio("argument", "./assets/argument.wav");
     }
 
     create() {
@@ -47,6 +48,8 @@ class Play extends Phaser.Scene {
         // score
         this.p1Score = 0;
 
+        highScore = highScore;
+
         // score display
         let scoreConfig = {
             fontFamily: 'Courier',
@@ -72,6 +75,11 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2 + 64, '(F)ire to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+        // 30-second Speed Increase
+        this.clock = this.time.delayedCall(30000 , () => {
+            this.game.settings.spaceshipSpeed *= 2;
+        }, null , this);
     }
 
     update() {
