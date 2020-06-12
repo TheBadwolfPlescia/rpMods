@@ -93,7 +93,7 @@ class Play extends Phaser.Scene {
         this.scoreLeft = this.add.text(69, 54, this.p1Score, scoreConfig);
 
         // High Score
-        this.scoreRight = this.add.text(478, 54, this.highScore, scoreConfig);
+        this.scoreRight = this.add.text(478, 54, highScore, scoreConfig);
 
         // game over flag
         this.gameOver = false;
