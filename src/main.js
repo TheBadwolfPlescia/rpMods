@@ -6,7 +6,7 @@
 // Changed Ship, Rocket, and Spaceship Art (25)
 // High Score Implemented (10)
 // 60 second timer implemented (10)
-// Added ship direction randomization (10) (the random number generator (in this .js) wonn't work, but I should have it right?)
+// Added ship direction randomization (10) (the random number generator (in this .js) won't work, but I believe I have it right)
 // TOTAL: 100/100
 
 // EXTRA (was left in from attempting)
