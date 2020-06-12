@@ -115,13 +115,13 @@ class Play extends Phaser.Scene {
 
         // Time remaining
         this.timeRemaining = game.settings.gameTimer / 1000;
-        this.timeCenter = this.add.text(320, 54, this.timeRemaining, 40) 
-        this.updateTime = this.time.addEvent({ delay: 1000, callback: this.onEvent, callbackScope: this, loop: true });
+        this.timeCenter = this.add.text(320, 54, this.timeRemaining, 20) 
+        this.updateTime = this.time.addEvent({ delay: 1000, callback: this.timing, callbackScope: this, loop: true });
 
         
     }
 
-    onEvent(){
+    timing(){
         if(this.timeRemaining > 0){
             this.timeRemaining -= 1; // One second
         }
