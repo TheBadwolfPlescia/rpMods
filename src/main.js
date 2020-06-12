@@ -6,11 +6,12 @@
 // Changed Ship, Rocket, and Spaceship Art (25)
 // High Score Implemented (10)
 // 60 second timer implemented (10)
-// TOTAL: 90/100
-
-// EXTRA
-// Partially Implemented New Ship type (10) ??? (Created art, Changed Point Value, changed position)
+// Added ship direction randomization (10) (the random number generator (in this .js) wonn't work, but I should have it right?)
 // TOTAL: 100/100
+
+// EXTRA (was left in from attempting)
+// Partially Implemented New Ship type (10) ??? (Created art, Changed Point Value, changed position)
+// TOTAL: 110/100
 
 
 let config = {
@@ -22,9 +23,11 @@ let config = {
 
 let game = new Phaser.Game(config);
 
+let direction = Phaser.Math.Between(0, 1);
+
 // define game settings
 game.settings = {
-    spaceshipSpeed: Phaser.Math.Between(-10, 1),
+    spaceshipSpeed: direction,
     gameTimer: 60000,    
 }
 
