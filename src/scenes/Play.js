@@ -30,6 +30,11 @@ class Play extends Phaser.Scene {
         }
         this.music.play(musicConfig);
 
+        // Update Game Timer
+        if(!this.gamegaOver){
+            this.timeUI.text = (game.settings.gameTimer - (this.time.now - this.timeOffset)) / 1000;
+        }
+
         // White Rectangle Borders
         this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0,0);
         this.add.rectangle(5, 443, 630, 32, 0xFFFFFF).setOrigin(0,0);
@@ -77,6 +82,11 @@ class Play extends Phaser.Scene {
             },
             fixedWidth: 100
         }
+        // Game Timer
+        this.scoreConfig.align = 'centerX';
+        this.timeUI = this.add.text(270, 54, '0', this.scoreConfig);
+        
+        // Score
         this.scoreLeft = this.add.text(69, 54, this.p1Score, scoreConfig);
 
         // game over flag
@@ -95,9 +105,7 @@ class Play extends Phaser.Scene {
             this.game.settings.spaceshipSpeed *= 3;
         }, null , this);
 
-        // Game Timer
-        this.scoreConfig.align = 'centerX';
-        this.timeUI = this.add.text(270, 54, '0', this.scoreConfig);
+        
     }
 
     update() {
