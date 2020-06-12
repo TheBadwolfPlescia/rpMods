@@ -45,6 +45,7 @@ class Play extends Phaser.Scene {
         this.ship01 = new Spaceship(this, game.config.width + 192, 132, 'spaceship', 0, 30).setOrigin(0, 0);
         this.ship02 = new Spaceship(this, game.config.width + 96, 196, 'spaceship', 0, 20).setOrigin(0, 0);
         this.ship03 = new Spaceship(this, game.config.width, 260, 'spaceship', 0, 10).setOrigin(0, 0);
+        this.ship04 = new Spaceship(this, game.config.width, 260, 'spaceship2', 0, 40).setOrigin(0, 0);
 
         //define keyboard keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
@@ -93,6 +94,11 @@ class Play extends Phaser.Scene {
         this.clock = this.time.delayedCall(30000 , () => {
             this.game.settings.spaceshipSpeed *= 3;
         }, null , this);
+
+        //a literal timer
+        this.scoreConfig.align = 'center';
+        this.timeUI = this.add.text(270, 54, '0', this.scoreConfig);
+        this.scoreConfig.align = 'right';
     }
 
     update() {
@@ -115,10 +121,15 @@ class Play extends Phaser.Scene {
             this.ship01.update();
             this.ship02.update();
             this.ship03.update();
+            this.ship04.update();
         }
 
 
         // check collisions
+        if(this.checkCollision(this.p1Rocket, this.ship04)) {
+            this.p1Rocket.reset();
+            this.shipExplode(this.ship04); 
+        }
         if(this.checkCollision(this.p1Rocket, this.ship03)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship03); 
