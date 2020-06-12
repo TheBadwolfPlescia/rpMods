@@ -3,9 +3,13 @@
 // Added looping Music (10)
 // New Scrolling Background Image (10)
 // Parallax Scrolling Asteroids (15)
-// Partially Implemented New Ship type (10) ???
 // Changed Ship, Rocket, and Spaceship Art (25)
-// 
+// High Score Implemented (10)
+// TOTAL: 80/100
+
+// EXTRA
+// Partially Implemented New Ship type (10) ??? (Created art, Changed Point Value, changed position)
+// TOTAL: 90/100
 
 
 let config = {

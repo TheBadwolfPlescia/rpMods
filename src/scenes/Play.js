@@ -106,17 +106,27 @@ class Play extends Phaser.Scene {
             this.gameOver = true;
         }, null, this);
 
-        this.add.text(game.config.width/2, 5, this.clock, )
+        
 
         // 30-second Speed Increase
         this.clock = this.time.delayedCall(30000 , () => {
             this.game.settings.spaceshipSpeed *= 2;
         }, null , this);
 
-        // Time remaining
-        this.timeMid = this.add.text(320, 54, this.clock);
+        // Timer remaining
+        this.timeRemaining = game.settings.gameTimer / 1000;
+        this.timeRight = this.add.bitmapText(320, 54, 'font', this.timeRemaining, 20).setLeftAlign(); 
+        this.updateTime = this.time.addEvent({ delay: 1000, callback: this.onEvent, callbackScope: this, loop: true });
 
         
+    }
+
+    onEvent(){
+        if(this.timeRemaining > 0){
+            this.timeRemaining -= 1; // One second
+        }
+        console.log(this.timeRemaining);
+        this.timeRight.setText(this.timeRemaining); 
     }
 
     update() {
