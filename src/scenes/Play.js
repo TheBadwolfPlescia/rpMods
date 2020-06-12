@@ -115,7 +115,7 @@ class Play extends Phaser.Scene {
 
         // Timer remaining
         this.timeRemaining = game.settings.gameTimer / 1000;
-        this.timeRight = this.add.text(320, 54, this.timeRemaining, 20) 
+        this.timeCenter = this.add.text(320, 54, this.timeRemaining, 20) 
         this.updateTime = this.time.addEvent({ delay: 1000, callback: this.onEvent, callbackScope: this, loop: true });
 
         
@@ -126,7 +126,7 @@ class Play extends Phaser.Scene {
             this.timeRemaining -= 1; // One second
         }
         console.log(this.timeRemaining);
-        this.timeRight.setText(this.timeRemaining); 
+        this.timeCenter.setText(this.timeRemaining); 
     }
 
     update() {

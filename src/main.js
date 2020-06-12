@@ -5,11 +5,12 @@
 // Parallax Scrolling Asteroids (15)
 // Changed Ship, Rocket, and Spaceship Art (25)
 // High Score Implemented (10)
-// TOTAL: 80/100
+// 60 second timer implemented (10)
+// TOTAL: 90/100
 
 // EXTRA
 // Partially Implemented New Ship type (10) ??? (Created art, Changed Point Value, changed position)
-// TOTAL: 90/100
+// TOTAL: 100/100
 
 
 let config = {
@@ -23,8 +24,12 @@ let game = new Phaser.Game(config);
 
 // define game settings
 game.settings = {
-    spaceshipSpeed: 3,
+    spaceshipSpeed: Phaser.Math.Between(0, 1),
     gameTimer: 60000,    
+}
+
+if(spaceshipSpeed == 0){
+    spaceshipSpeed - 1;
 }
 
 // reserve some keyboard variables
