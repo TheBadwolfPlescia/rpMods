@@ -27,12 +27,12 @@ let game = new Phaser.Game(config);
 
 // define game settings
 game.settings = {
-    spaceshipSpeed: 1,
+    spaceshipSpeed: Phaser.Math.Between(0,1),
     gameTimer: 60000,    
 }
 
 if(game.settings.spaceshipSpeed == 0){
-    game.settings.spaceshipSpeed += 1;
+    game.settings.spaceshipSpeed -= 1;
 }
 
 // reserve some keyboard variables
