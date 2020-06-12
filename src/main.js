@@ -20,8 +20,7 @@ let game = new Phaser.Game(config);
 // define game settings
 game.settings = {
     spaceshipSpeed: 3,
-    gameTimer: 60000,
-    highScore: 0    
+    gameTimer: 60000,    
 }
 
 // reserve some keyboard variables
@@ -29,3 +28,4 @@ let keyF, keyLEFT, keyRIGHT;
 
 let missileControl = false;
 
+let highScore = 0;
