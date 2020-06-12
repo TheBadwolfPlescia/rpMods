@@ -115,7 +115,7 @@ class Play extends Phaser.Scene {
 
         // Timer remaining
         this.timeRemaining = game.settings.gameTimer / 1000;
-        this.timeRight = this.add.bitmapText(320, 54, 'font', this.timeRemaining, 20).setLeftAlign(); 
+        this.timeRight = this.add.text(320, 54, this.timeRemaining, 20) 
         this.updateTime = this.time.addEvent({ delay: 1000, callback: this.onEvent, callbackScope: this, loop: true });
 
         
