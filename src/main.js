@@ -24,7 +24,7 @@ let game = new Phaser.Game(config);
 
 // define game settings
 game.settings = {
-    spaceshipSpeed: Phaser.Math.Between(-5, 5),
+    spaceshipSpeed: Phaser.Math.RND.pick(-1,1),
     gameTimer: 60000,    
 }
 
@@ -34,7 +34,5 @@ if(game.settings.spaceshipSpeed == 0){
 
 // reserve some keyboard variables
 let keyF, keyLEFT, keyRIGHT;
-
-let missileControl = false;
 
 let highScore = 0;
