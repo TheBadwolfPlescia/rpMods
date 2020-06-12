@@ -29,4 +29,3 @@ let keyF, keyLEFT, keyRIGHT;
 
 let missileControl = false;
 
-let highScore = 0;

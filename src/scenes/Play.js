@@ -72,7 +72,7 @@ class Play extends Phaser.Scene {
         // score
         this.p1Score = 0;
 
-        
+        highScore = highScore;
 
         // score display
         let scoreConfig = {
