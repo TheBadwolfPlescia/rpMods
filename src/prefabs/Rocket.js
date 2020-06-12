@@ -5,50 +5,34 @@ class Rocket extends Phaser.GameObjects.Sprite {
         
         // Add object to the existing scene update list n display list
         scene.add.existing(this);
-        this.multiplayer = game.settings.multiplay;
         this.isFiring = false;  // track rockets firing status
         this.sfxRocket = scene.sound.add('sfx_rocket'); // add rocket sfx
-        if(this.multiplayer == 0){
-            //if 0 give P1 controls
-            this.moveLeft = keyLEFT;
-            this.moveRight = keyRIGHT;
-            this.fire = keyF;
-        }
-        else{
-            //if 1 (or anything else) give P2 controls
-            this.moveLeft = keyJ;
-            this.moveRight = keyL;
-            this.fire = keyI;
-        }
     }
 
-    update(){
-        //left/right movement
-        if(true){
-            if(this.moveLeft.isDown && this.x >= 47){
+    update() {
+        // Left/Right movement
+        if(!this.isFiring) {
+            if(keyLEFT.isDown && this.x >=47 ) {
                 this.x -= 2;
-            }else if (this.moveRight.isDown && this.x <= 578){
-                this.x +=  2;
+            } else if (keyRIGHT.isDown && this.x <= 578 ) {
+                this.x += 2;
             }
         }
 
-        //fire button
-        if(Phaser.Input.Keyboard.JustDown(this.fire)){
-            if(!this.isFiring){
-                this.sfxRocket.play();
-            }
+        // Fire button
+        if(Phaser.Input.Keyboard.JustDown(keyF) && !this.isFiring) {
             this.isFiring = true;
-
+            this.sfxRocket.play(); // play sfx
         }
-        
-        //if fired, move up
-        if(this.isFiring && this.y >= 108){
-            this.y -= 2;
+        // if fired, move up
+        if(this.isFiring && this.y >= 108) {
+            this.y -=2;
         }
 
-        //reset on miss
-        if(this.y <= 108){
-           this.reset();
+        // reset on miss
+        if(this.y <= 108) {
+            this.isFiring = false;
+            this.y = 431;
         }
     }
 

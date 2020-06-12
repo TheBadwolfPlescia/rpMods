@@ -10,12 +10,25 @@ class Play extends Phaser.Scene {
         this.load.image("starfield", "./assets/starfield2.png");
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
-        this.load.audio("argument", "./assets/argument.wav");
+        // Add music
+        this.load.audio("music", "./assets/argument.wav");
     }
 
     create() {
         //place tile sprite
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
+        this.music = this.sound.add("argument");
+
+        var musicConfig = {
+            mute: false,
+            volume: 1,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0
+        }
+        this.music.play(musicConfig);
 
         // White Rectangle Borders
         this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0,0);
@@ -78,7 +91,7 @@ class Play extends Phaser.Scene {
 
         // 30-second Speed Increase
         this.clock = this.time.delayedCall(30000 , () => {
-            this.game.settings.spaceshipSpeed *= 2;
+            this.game.settings.spaceshipSpeed *= 3;
         }, null , this);
     }
 
