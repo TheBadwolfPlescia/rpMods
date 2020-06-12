@@ -96,7 +96,6 @@ class Play extends Phaser.Scene {
         }, null , this);
 
         //a literal timer
-        this.scoreConfig.align = 'right';
         this.timeUI = this.add.text(270, 54, '0', this.scoreConfig);
     }
 
