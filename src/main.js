@@ -1,7 +1,10 @@
 // Anthony Plescia
 // Implement 30-second speed increase (10)
 // Added looping Music (10)
-// New Scrolling Background (10)
+// New Scrolling Background Image (10)
+// Parallax Scrolling Asteroids (15)
+// Partially Implemented New Ship type (10) ???
+// Changed Ship, Rocket, and Spaceship Art (25)
 // 
 
 

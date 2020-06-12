@@ -35,6 +35,9 @@ class Play extends Phaser.Scene {
         }
         this.music.play(musicConfig);
 
+        // Test add border art
+        this.add.image ()
+
         // White Rectangle Borders
         this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0,0);
         this.add.rectangle(5, 443, 630, 32, 0xFFFFFF).setOrigin(0,0);
@@ -87,6 +90,9 @@ class Play extends Phaser.Scene {
         // Score
         this.scoreLeft = this.add.text(69, 54, this.p1Score, scoreConfig);
 
+        // High Score
+        this.scoreRight = this.add.text(369, 54, this.highScore, scoreConfig);
+
         // game over flag
         this.gameOver = false;
 
@@ -97,6 +103,8 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2 + 64, '(F)ire to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+        this.add.text(game.config.width/2, 5, this.clock, )
 
         // 30-second Speed Increase
         this.clock = this.time.delayedCall(30000 , () => {
@@ -174,10 +182,15 @@ class Play extends Phaser.Scene {
             ship.alpha = 1;                     // make ship visible again
             boom.destroy();                     // remove explosion sprite
         });  
+        
         // score increment and repaint
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;
-        this.sound.play('sfx_explosion');     
+        this.sound.play('sfx_explosion');   
+        
+        if(this.p1Score > this.highScore){
+            this.highScore = this.p1Score;
+        }
     }
 
 
