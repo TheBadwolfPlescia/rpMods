@@ -191,6 +191,7 @@ class Play extends Phaser.Scene {
         if(this.p1Score > this.highScore){
             this.highScore = this.p1Score;
         }
+        this.scoreLeft.text = this.highScore;
     }
 
 
