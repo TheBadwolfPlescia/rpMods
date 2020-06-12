@@ -113,9 +113,9 @@ class Play extends Phaser.Scene {
             this.game.settings.spaceshipSpeed *= 2;
         }, null , this);
 
-        // Timer remaining
+        // Time remaining
         this.timeRemaining = game.settings.gameTimer / 1000;
-        this.timeCenter = this.add.text(320, 54, this.timeRemaining, 20) 
+        this.timeCenter = this.add.text(320, 54, this.timeRemaining, 40) 
         this.updateTime = this.time.addEvent({ delay: 1000, callback: this.onEvent, callbackScope: this, loop: true });
 
         
