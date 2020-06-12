@@ -110,7 +110,7 @@ class Play extends Phaser.Scene {
 
         // 30-second Speed Increase
         this.clock = this.time.delayedCall(30000 , () => {
-            this.game.settings.spaceshipSpeed *= 3;
+            this.game.settings.spaceshipSpeed *= 2;
         }, null , this);
 
         
