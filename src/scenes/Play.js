@@ -114,7 +114,7 @@ class Play extends Phaser.Scene {
         }, null , this);
 
         // Time remaining
-        this.timeMid = this.add.text(320, 54, this.clock, scoreConfig);
+        this.timeMid = this.add.text(320, 54, this.clock);
 
         
     }
