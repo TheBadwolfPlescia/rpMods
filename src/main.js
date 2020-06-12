@@ -24,7 +24,7 @@ let game = new Phaser.Game(config);
 
 // define game settings
 game.settings = {
-    spaceshipSpeed: Phaser.Math.Between(-1, 1),
+    spaceshipSpeed: Phaser.Math.Between(-5, 5),
     gameTimer: 60000,    
 }
 
