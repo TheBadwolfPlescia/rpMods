@@ -22,9 +22,11 @@ let config = {
 
 let game = new Phaser.Game(config);
 
+let direction = Phaser.Math.RND.pick(-1,1);
+
 // define game settings
 game.settings = {
-    spaceshipSpeed: Phaser.Math.RND.pick('-1','1'),
+    spaceshipSpeed: direction,
     gameTimer: 60000,    
 }
 
