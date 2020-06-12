@@ -49,7 +49,7 @@ class Play extends Phaser.Scene {
         this.add.rectangle(37, 42, 566, 64, 0x00FF00).setOrigin(0,0);
         
         // Add the Rocket (p1)
-        this.p1Rocket = new Rocket(this, game.config.width/2, 431, 'rocket2').setScale(0.7, 0.7).setOrigin(0, 0);
+        this.p1Rocket = new Rocket(this, game.config.width/2, 431, 'rocket2').setScale(2, 2).setOrigin(0, 0);
 
         // add spaceships (x3)
         this.ship01 = new Spaceship(this, game.config.width + 192, 132, 'spaceshipv2', 0, 30).setOrigin(0, 0);
