@@ -6,7 +6,7 @@ class Play extends Phaser.Scene {
     preload() {
         //load images/tile sprite
         this.load.image("rocket", "./assets/rocket.png");
-        this.load.image("spaceship", "./assets/spaceship.png");
+        this.load.image("spaceshipv2", "./assets/spaceshipv2.png");
         this.load.image("spaceship2", "./assets/spaceship2.png");
         this.load.image("starfield", "./assets/starfield2.png");
         this.load.image("asteroidfield", "./assets/asteroidfield.png");
@@ -47,9 +47,9 @@ class Play extends Phaser.Scene {
         this.p1Rocket = new Rocket(this, game.config.width/2, 431, 'rocket').setScale(0.5, 0.5).setOrigin(0, 0);
 
         // add spaceships (x3)
-        this.ship01 = new Spaceship(this, game.config.width + 192, 132, 'spaceship', 0, 30).setOrigin(0, 0);
-        this.ship02 = new Spaceship(this, game.config.width + 96, 196, 'spaceship', 0, 20).setOrigin(0, 0);
-        this.ship03 = new Spaceship(this, game.config.width, 260, 'spaceship', 0, 10).setOrigin(0, 0);
+        this.ship01 = new Spaceship(this, game.config.width + 192, 132, 'spaceshipv2', 0, 30).setOrigin(0, 0);
+        this.ship02 = new Spaceship(this, game.config.width + 96, 196, 'spaceshipv2', 0, 20).setOrigin(0, 0);
+        this.ship03 = new Spaceship(this, game.config.width, 260, 'spaceshipv2', 0, 10).setOrigin(0, 0);
         this.ship04 = new Spaceship(this, game.config.width, 324, 'spaceship2', 0, 40).setOrigin(0, 0);
 
         //define keyboard keys
