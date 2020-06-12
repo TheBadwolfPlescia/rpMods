@@ -19,6 +19,9 @@ class Play extends Phaser.Scene {
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
         this.music = this.sound.add("music");
 
+        // Parallax Scrolling
+        this.asteroidfield = this.add.tileSprite(0, 0, 640, 480, 'asteroids').setOrigin(0, 0);
+
         var musicConfig = {
             mute: false,
             volume: 1,
@@ -29,11 +32,6 @@ class Play extends Phaser.Scene {
             delay: 0
         }
         this.music.play(musicConfig);
-
-        // Update Game Timer
-        if(!this.gamegaOver){
-            this.timeUI.text = (game.settings.gameTimer - (this.time.now - this.timeOffset)) / 1000;
-        }
 
         // White Rectangle Borders
         this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0,0);
@@ -82,9 +80,7 @@ class Play extends Phaser.Scene {
             },
             fixedWidth: 100
         }
-        // Game Timer
-        this.scoreConfig.align = 'centerX';
-        this.timeUI = this.add.text(270, 54, '0', this.scoreConfig);
+        
         
         // Score
         this.scoreLeft = this.add.text(69, 54, this.p1Score, scoreConfig);
@@ -119,6 +115,7 @@ class Play extends Phaser.Scene {
         
         //scroll starfield
         this.starfield.tilePositionX -= 4;
+        this.asteroidfield.tilePositionX -= 6;
         
         
         //update spaceship
