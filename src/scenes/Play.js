@@ -8,6 +8,7 @@ class Play extends Phaser.Scene {
         this.load.image("rocket", "./assets/rocket.png");
         this.load.image("spaceship", "./assets/spaceship.png");
         this.load.image("starfield", "./assets/starfield2.png");
+        this.load.image("asteroidfield", "./assets/asteroidfield.png");
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
         // Add music
@@ -20,7 +21,7 @@ class Play extends Phaser.Scene {
         this.music = this.sound.add("music");
 
         // Parallax Scrolling
-        this.asteroidfield = this.add.tileSprite(0, 0, 640, 480, 'asteroids').setOrigin(0, 0);
+        this.asteroidfield = this.add.tileSprite(0, 0, 640, 480, 'asteroidfield').setOrigin(0, 0);
 
         var musicConfig = {
             mute: false,
