@@ -95,7 +95,8 @@ class Play extends Phaser.Scene {
             this.game.settings.spaceshipSpeed *= 3;
         }, null , this);
 
-        //a literal timer
+        // Game Timer
+        this.scoreConfig.align = 'centerX';
         this.timeUI = this.add.text(270, 54, '0', this.scoreConfig);
     }
 

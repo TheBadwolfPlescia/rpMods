@@ -1,5 +1,7 @@
 // Anthony Plescia
 // Implement 30-second speed increase (10)
+// Added looping Music (10)
+// New Scrolling Background (10)
 // 
 
 
