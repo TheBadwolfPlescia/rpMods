@@ -113,6 +113,9 @@ class Play extends Phaser.Scene {
             this.game.settings.spaceshipSpeed *= 2;
         }, null , this);
 
+        // Time remaining
+        this.timeMid = this.add.text(320, 54, this.clock, scoreConfig);
+
         
     }
 
