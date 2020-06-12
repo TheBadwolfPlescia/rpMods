@@ -16,6 +16,8 @@ class Play extends Phaser.Scene {
         this.load.audio("music", "./assets/argument.wav");
     }
 
+    
+
     create() {
         //place tile sprite
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
@@ -70,7 +72,7 @@ class Play extends Phaser.Scene {
         // score
         this.p1Score = 0;
 
-        this.highScore = this.highScore;
+        
 
         // score display
         let scoreConfig = {
@@ -188,10 +190,10 @@ class Play extends Phaser.Scene {
         this.scoreLeft.text = this.p1Score;
         this.sound.play('sfx_explosion');   
         
-        if(this.p1Score > this.highScore){
-            this.highScore = this.p1Score;
+        if(this.p1Score > this.game.settings.highScore){
+            this.game.settings.highScore = this.p1Score;
         }
-        this.scoreRight.text = this.highScore;
+        this.scoreRight.text = this.game.settings.highScore;
     }
 
 
